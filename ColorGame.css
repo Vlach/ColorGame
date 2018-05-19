@@ -1,0 +1,99 @@
+body {
+  background-color: #232323;
+}
+
+.square {
+  float: left;
+  margin: 1.66%;
+  width: 30%;
+  background-color: purple;
+  padding-bottom: 30%;
+  border-radius: 30px;
+}
+
+#container {
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Bangers', cursive;
+  letter-spacing: 2px;
+}
+
+span {
+  color: black;
+  font-family: 'Carter One', cursive;
+}
+
+#colorDisplay {
+  font-size: 2em;
+  font-weight: lighter;
+
+}
+
+#stripe {
+  display: flex;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.item1 {
+  flex-grow: 2;
+  text-align: center;
+}
+
+.item2 {
+  flex-grow: 3;
+  text-align: center;
+}
+
+.item3 {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.item4 {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.hover {
+  opacity: 5%;
+  border-radius: 5px;
+  box-shadow: inset -1px -1px 5px #143751;
+}
+
+#colorDisplay {
+  color: white;
+}
+
+.disappear {
+  background-color: #232323;
+}
+
+.selected {
+  background-color: #4a89ba;
+  opacity: 5%;
+  border-radius: 5px;
+}
+
+.morph {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.morph:hover {
+  border-radius: 50%;
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
