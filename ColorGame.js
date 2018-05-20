@@ -112,8 +112,6 @@ function modeButton(number) {
 	displayMessage.textContent = "";
 	numberOfSquares = number;
 	h1.style.backgroundColor = "#232323";
-	easyBtn.classList.add("selected");
-	hardBtn.classList.remove("selected");
 	colors = generateRandomColors(numberOfSquares);
 	pickedColor = pickColor();
 	colorDisplay.textContent = pickedColor;
@@ -122,6 +120,8 @@ function modeButton(number) {
 easyBtn.addEventListener("click", function() {
 	modeButton(3);
 	hoverE();
+	easyBtn.classList.add("selected");
+	hardBtn.classList.remove("selected");
 	for (var i = 0; i < squares.length; i++) {
 		if (colors[i]) {
 			squares[i].style.backgroundColor = colors[i];
@@ -134,6 +134,8 @@ easyBtn.addEventListener("click", function() {
 hardBtn.addEventListener("click", function() {
 	modeButton(6);
 	hoverH();
+	easyBtn.classList.remove("selected");
+	hardBtn.classList.add("selected");
 	for (var i = 0; i < squares.length; i++) {
 		squares[i].style.backgroundColor = colors[i];
 		squares[i].style.display = "block";
