@@ -9,6 +9,9 @@ body {
   background-color: purple;
   padding-bottom: 30%;
   border-radius: 30px;
+  transition: background 0.6s;
+  -webkit-transition: background 0.6s;
+  -moz-transition: background 0.6;
 }
 
 #container {
@@ -22,23 +25,26 @@ h1 {
   text-transform: uppercase;
   font-family: 'Bangers', cursive;
   letter-spacing: 2px;
+  border-radius: 5px;
 }
 
 span {
   color: black;
-  font-family: 'Carter One', cursive;
 }
 
 #colorDisplay {
   font-size: 2em;
   font-weight: lighter;
-
+  line-height: 1.1;
+  padding: 20px 0;
 }
 
 #stripe {
   display: flex;
   background-color: white;
   border-radius: 5px;
+  height: 1.5em;
+  font-family: 'Carter One', cursive;
 }
 
 .item1 {
@@ -61,7 +67,21 @@ span {
   text-align: center;
 }
 
-.hover {
+button {
+  background: none;
+  border: none;
+  text-transform: uppercase;
+  height: 100%;
+  font-family: 'Carter One', cursive;
+  letter-spacing: 1px;
+  font-size: inherit;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  outline: none;
+}
+
+button:hover {
   opacity: 5%;
   border-radius: 5px;
   box-shadow: inset -1px -1px 5px #143751;
