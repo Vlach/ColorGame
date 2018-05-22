@@ -1,22 +1,28 @@
-//tracking the mode (number of squares)
+//tracking the mode from here
 var numberOfSquares = 6;
 //generated colors
 var colors = [];
-//
-var squares = document.querySelectorAll(".square");
 //Picking a new random color from the array to start playing
-var pickedColor = pickColor();
-//
+var pickedColor;
+//SELECTORS
+var squares = document.querySelectorAll(".square");
 var colorDisplay = document.getElementById("colorDisplay");
 var displayMessage = document.querySelector("#message");
 var h1 = document.querySelector("h1");
 var item1 = document.querySelector(".item1");
 var modeButton = document.querySelectorAll(".mode");
-// ALL THE VARIABLES ARE ABOVE
-
+// ALL THE VARIABLES AND SELECTORS ARE ABOVE
 init();
-
+//displaying a color that was randomly picked
+colorDisplay.textContent = pickedColor;
+//initializing the game
 function init() {
+	setModeBTN();
+	setColorASG();
+	reset();
+}
+//setting up mode buttons here
+function setModeBTN() {
 	//looping through the mode buttons and giving them functionality
 	for (var i = 0; i < modeButton.length; i++) {
 		modeButton[i].addEventListener("click", function () {
@@ -27,9 +33,10 @@ function init() {
 			reset();
 		});
 	}
-
-	//Assigning colors to the squares by iterations
-	for (i = 0; i < squares.length; i++) {
+}
+//Assigning colors to the squares by iterations
+function setColorASG() {
+	for (var i = 0; i < squares.length; i++) {
 		squares[i].addEventListener("click", function () {
 			var clickedColor = this.style.backgroundColor;
 			if (clickedColor === pickedColor) {
@@ -41,16 +48,9 @@ function init() {
 				this.style.backgroundColor = "transparent";
 				displayMessage.textContent = "Dont't give up! Try again :)";
 			}
-
 		});
 	}
-	reset();
-
 }
-
-//displaying a color that was randomly picked
-colorDisplay.textContent = pickedColor;
-
 //Resetting the game
 function reset() {
 	colors = generateRandomColors(numberOfSquares);
@@ -71,14 +71,11 @@ function reset() {
 item1.addEventListener("click", function () {
 	reset();
 });
-
-
 //choosing a random color to pick
 function changeColor(color) {
 	for (var i = 0; i < squares.length; i++) {
 		squares[i].style.backgroundColor = color;
 	}
-
 }
 //generates a random number and return one color(string from th array colors)
 function pickColor() {
@@ -96,7 +93,6 @@ function generateRandomColors(num) {
 	}
 	//return that array
 	return arr;
-
 }
 //RGB color generator itself --<returns an RGB string>--
 function randomColor() {
